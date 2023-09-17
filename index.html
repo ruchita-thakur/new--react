@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css"/>
     <title>Namaste React</title>
 </head>
 <body>
-    <div id="root">
-        <script>
-           const heading= document.createElement("h1")
-           //content of the h1 element
-           heading.innerHTML="Hello World from Javascript"
-           //get the root element
-           const root=document.getElementById("root")
-           //heading will go as a child of the root element
-           root.appendChild(heading)
-        </script>
-    </div>
+    <!-- This won't get replaced -->
+    <h1>On top of root element</h1>
+    <!-- if something is already present in the element where the react code is going to get rendered then it will get replaced once tge react code loads -->
+    <!-- Ruchita is here! -This will get replaced -->
+    <div id="root">Ruchita is here!</div>
+    <!-- importing react into our code using CDN links -->
+    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
+
+    <!-- script tag treats app.js as a normal javascript file but app.js is not a regular js file it has imports it is react code so we will have to explicitly define it's type beside src -->
+    <script type="module" src="./App.js">
+
+    </script>
 </body>
 </html>

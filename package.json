@@ -1,0 +1,31 @@
+{
+  "name": "new-beginning-react",
+  "version": "1.0.0",
+  "description": "--npm is a package manager but is not an acronym for node package mananger\r --it manges packages via package.json which has all the package names along with their versions\r --package.json is a configuration file for npm\r --bundler is used to bundle our app i.e compress it, minify it so that it can be pushed to production.\r --when we create a react app using the command npm create-react-app it will generate a productin ready application. it uses webpack bundler by default",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruchita-thakur/new--react.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruchita-thakur/new--react/issues"
+  },
+  "homepage": "https://github.com/ruchita-thakur/new--react#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
