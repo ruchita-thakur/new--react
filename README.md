@@ -27,3 +27,37 @@
 -- HTTPs
 -- Tree Shaking
 -- different dev and production bundles
+
+-- JSX is not react, React code can be written even without jsx but it would be very complicated and confusing to understand the code. So, we use JSX to write react code easily
+
+-- When we create an element using React.createElement it creates a react element for us which is a JS object in turn. When we render that element using render method it is converted into an HTML element
+
+<!-- const heading =React.createElement("div",{id:"heading},"Hello")
+                const root=ReactDOM.createRoot(document.getElementById("root"))
+                root.render(heading) -->
+
+- - When we craete an element using JSX it gets converted into React.createElement and babel does this for us and the same above process is followed.
+    <!-- const heading=<h1>Hello</h1> -->
+
+-- When you log heading to the console you will get an object.
+-- Attributes in JSX is given using camel case
+-- React functional component is nothing but Javascript functions which return some JSX code
+
+<!-- const Heading=()=>{
+                    return <h1>Hello</h1>
+                } -->
+
+                OR
+
+                <!-- const Heading=()=>(
+                    <h1>Hello</h1>
+                ) -->
+
+-- name of the Functional Component should start with capital letter
+-- If you want to write javascript inside jsx you can do it using curly braces {}
+
+<!-- const x=1000
+                const Heading=()=>(
+                    <h1>Hello</h1>
+                    {x}
+                ) -->
