@@ -36,28 +36,44 @@ const heading =React.createElement("div",{id:"heading},"Hello")
 const root=ReactDOM.createRoot(document.getElementById("root"))
 root.render(heading)
 
-- - When we craete an element using JSX it gets converted into React.createElement and babel does this for us and the same above process is followed.
-    const heading=<h1>Hello</h1>
+-- When we craete an element using JSX it gets converted into React.createElement and babel does this for us and the same above process is followed.
+--const heading=<h1>Hello</h1>
 
 -- When you log heading to the console you will get an object.
 -- Attributes in JSX is given using camel case
 -- React functional component is nothing but Javascript functions which return some JSX code
 
 const Heading=()=>{
-return <h1>Hello</h1>
+return <div>Hello</div>
 }
 
                 OR
 
-                const Heading=()=>(
-                    <h1>Hello</h1>
-                )
+const Heading=()=>(
+<h1>Hello</h1>
+)
 
 -- name of the Functional Component should start with capital letter
 -- If you want to write javascript inside jsx you can do it using curly braces {}
 
 const x=1000
 const Heading=()=>(
+
 <h1>Hello</h1>
 {x}
 )
+
+-- to use inline style in react create an object and then pass that object to the style attribute
+const header={
+    backgroundColor:"black"
+}
+
+const Header=()=>{
+    <p style={header}>Hello</p>
+}
+
+-- style attribute takes a javascript object
+
+-- not using keys is not acceptable
+-- using index as keys is not recommended
+-- use unique id as key (best practice)
