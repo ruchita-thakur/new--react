@@ -77,3 +77,18 @@ const Header=()=>{
 -- not using keys is not acceptable
 -- using index as keys is not recommended
 -- use unique id as key (best practice)
+
+--There are two types of export/import
+-default export/import:
+export default ComponentName
+import ComponentName from 'path'
+
+when you have to export multiple things use named export/import
+-named export/import:
+export const variable-name
+import {variable-name} from path
+
+#React hooks
+--React hook is a normal javascript utility function
+--useState()
+--useEffect()
