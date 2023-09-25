@@ -90,5 +90,16 @@ import {variable-name} from path
 
 #React hooks
 --React hook is a normal javascript utility function
---useState()
+--useState() -super powerful state variables
 --useEffect()
+
+local state variable(scope- only in the component) ==super powerful state variable
+  const [listOfRestaurants, setListOfRestaurants] = useState(resList);
+  The above code can also be written as below because useState returns an array and we are just destructuring thethe array in the above line
+  const arr = useState(resList);
+  console.log(arr);
+  const listOfRestaurants = arr[0];
+  const setListOfRestaurants = arr[1];
+  console.log(listOfRestaurants);
+  console.log(setListOfRestaurants);
+  normal JS variable(scope- only in the function)
