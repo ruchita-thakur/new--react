@@ -93,7 +93,7 @@ import {variable-name} from path
 --useState() -super powerful state variables
 --useEffect()
 
-local state variable(scope- only in the component) ==super powerful state variable
+#local state variable(scope- only in the component) ==super powerful state variable
   const [listOfRestaurants, setListOfRestaurants] = useState(resList);
   The above code can also be written as below because useState returns an array and we are just destructuring thethe array in the above line
   const arr = useState(resList);
@@ -103,3 +103,46 @@ local state variable(scope- only in the component) ==super powerful state variab
   console.log(listOfRestaurants);
   console.log(setListOfRestaurants);
   normal JS variable(scope- only in the function)
+
+#In react when you want to go from one page to another page never ever use an anchor tag becausethe whole page gets refreshed
+--in react you can navigate to a new page without reloading the whole page using the Link component which behind the scenes uses the anchor tag
+-Link is a wrapper over anchor tag
+
+#Two types of routing in web applications
+-Server side routing- you make a network call and the html page is comes from server
+-Client side routing- you don't make any network calls because all the components are already loaded in our app. When we load the app for the first time it already has all the components 
+
+
+
+- In class based components componentDidMount is called after the constructor and render method
+-order of execution
+1. Parent constructor
+2. Parent Render
+3. Child constructor
+4. Child render
+5. Child's life cycle methods
+6. Parents's life cycle methods
+-- there are two phases render phase and commit phase 
+in render phase constructor and render method is called for all the components i.e render phase of all the components are batched 
+then DOM is updated in a single batch:
+commit phase- componentDidMount is called for all the components i.e commit phase of all the components
+This optimizes performance
+/*
+Parent Constructor
+Parent Render
+First Child Constructor
+First Child Render
+Second Child Constructor
+Second Child Render
+First Child componentDidMount
+Second Child componentDidMount
+Parent Component componentDidMount
+*/
+
+--If you follow single responsibility principle you code will become more readable,testable, maintainable, you get features of reusability
+
+--A hook is just a utility function
+
+--bundle is a logical separation of code, a bundle should have enough code for a feature to run
+--bundling is done using lazy loading also known as chunking, code splitting , on demand loading, dynamic import
+in lazy loading all the components are not loaded at once, few componets are loaded when required

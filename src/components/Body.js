@@ -2,11 +2,15 @@ import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  const onlineStatus = useOnlineStatus();
 
   useEffect(() => {
     fetchData();
@@ -59,6 +63,14 @@ const Body = () => {
   //Whenever state variable changes, react triggers the reconciliation cycle(it re-renders the component)
   console.log("Body rendered");
 
+  if (onlineStatus === false) {
+    return (
+      <h1>
+        You're offline. Please check your internet connection and try again!
+      </h1>
+    );
+  }
+
   //Conditional Rendering
 
   return listOfRestaurants.length === 0 ? (
@@ -107,7 +119,13 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            className="link-color"
+            to={"/restaurants/" + restaurant.info.id}
+            key={restaurant.info.id}
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
